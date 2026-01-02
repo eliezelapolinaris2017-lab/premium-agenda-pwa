@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <title>Premium Agenda</title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">◆</span>
+      <span id="brandName">Premium Agenda</span>
+    </div>
+    <div class="top-actions">
+      <button id="btnInstall" class="btn ghost" hidden>Instalar</button>
+      <button id="btnLogout" class="btn danger" hidden>Salir</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="authView" class="card">
+      <h1>Acceso</h1>
+      <p class="muted">Entra con Google. Multi-negocio, multi-rol, sin drama.</p>
+      <button id="btnGoogle" class="btn primary">Continuar con Google</button>
+      <div id="authMsg" class="msg"></div>
+    </section>
+
+    <section id="appView" class="grid" hidden>
+      <aside class="card sidebar">
+        <h2>Panel</h2>
+
+        <label class="lbl">Negocio</label>
+        <select id="tenantSelect" class="input"></select>
+
+        <div class="divider"></div>
+
+        <button class="btn" data-tab="agenda">Agenda</button>
+        <button class="btn" data-tab="clientes">Clientes</button>
+        <button class="btn" data-tab="servicios">Servicios</button>
+        <button class="btn" data-tab="equipo">Equipo</button>
+        <button class="btn" data-tab="config">Config</button>
+      </aside>
+
+      <section class="card content">
+        <div class="content-head">
+          <h2 id="viewTitle">Agenda</h2>
+          <div class="content-actions">
+            <input id="datePick" class="input" type="date">
+            <button id="btnNewAppt" class="btn primary">+ Cita</button>
+          </div>
+        </div>
+
+        <div id="viewBody"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
